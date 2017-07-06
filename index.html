@@ -253,6 +253,150 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://ChinaAndy.com/2017/07/06/图层几何学/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="安丹阳">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/06/图层几何学/" itemprop="url">图层几何学</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-06T16:00:29+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="图层几何学"><a href="#图层几何学" class="headerlink" title="图层几何学"></a>图层几何学</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>之前提到过，视图的<code>center</code>属性和图层的<code>position</code>属性都指定了<code>anchorPoint</code>相对于父图层的位置。图层的<code>anchorPoint</code>通过<code>position</code>来控制它的<code>frame</code>的位置，你可以认为<code>anchorPoint</code>是用来移动图层的把柄。</p>
+<p>默认来说，<code>anchorPoint</code>位于图层的中点，所以图层的将会以这个点为中心放置。<code>anchorPoint</code>属性并没有被UIView接口暴露出来，这也是视图的<code>position</code>属性被叫做“center”的原因。但是图层的<code>anchorPoint</code>可以被移动，比如你可以把它置于图层frame的左上角，于是图层的内容将会向右下角的position方向移动（图3.3），而不是居中了。</p>
+<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/3.3.jpeg" alt="image"></p>
+<p>和第二章提到的<code>contentsRect</code>和<code>contentsCenter</code>属性类似，<code>anchorPoint</code>用单位坐标来描述，也就是图层的相对坐标，图层左上角是{0, 0}，右下角是{1, 1}，因此默认坐标是{0.5, 0.5}。<code>anchorPoint</code>可以通过指定x和y值小于0或者大于1，使它放置在图层范围之外。</p>
+<p>注意在图3.3中，当改变了<code>anchorPoint</code>，<code>position</code>属性保持固定的值并没有发生改变，但是<code>frame</code>却移动了。</p>
+<p>那在什么场合需要改变<code>anchorPoint</code>呢？既然我们可以随意改变图层位置，那改变<code>anchorPoint</code>不会造成困惑么？为了举例说明，我们来举一个实用的例子，创建一个模拟闹钟的项目。</p>
+<p>钟面和钟表由四张图片组成（图3.4），为了简单说明，我们还是用传统的方式来装载和加载图片，使用四个UIImageView实例（当然你也可以用正常的视图，设置他们图层的contents图片）。</p>
+<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/3.4.jpeg" alt="clock"></p>
+<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/3.6.jpeg" alt="image"></p>
+<p>清单3.1 Clock</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">@interface ViewController ()</div><div class="line"></div><div class="line">@property (nonatomic, weak) IBOutlet UIImageView *hourHand;</div><div class="line">@property (nonatomic, weak) IBOutlet UIImageView *minuteHand;</div><div class="line">@property (nonatomic, weak) IBOutlet UIImageView *secondHand;</div><div class="line">@property (nonatomic, weak) NSTimer *timer;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation ViewController</div><div class="line"></div><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">[super viewDidLoad];</div><div class="line"></div><div class="line">// adjust anchor points</div><div class="line"></div><div class="line">self.secondHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f); </div><div class="line">self.minuteHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f); </div><div class="line">self.hourHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f);</div><div class="line"></div><div class="line">//start timer</div><div class="line">self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];</div><div class="line">￼</div><div class="line">//set initial hand positions</div><div class="line">[self tick];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)tick</div><div class="line">&#123;</div><div class="line">//convert time to hours, minutes and seconds</div><div class="line">NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];</div><div class="line">NSUInteger units = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;</div><div class="line">NSDateComponents *components = [calendar components:units fromDate:[NSDate date]];</div><div class="line">CGFloat hoursAngle = (components.hour / 12.0) * M_PI * 2.0;</div><div class="line">//calculate hour hand angle //calculate minute hand angle</div><div class="line">CGFloat minsAngle = (components.minute / 60.0) * M_PI * 2.0;</div><div class="line">//calculate second hand angle</div><div class="line">CGFloat secsAngle = (components.second / 60.0) * M_PI * 2.0;</div><div class="line">//rotate hands</div><div class="line">self.hourHand.transform = CGAffineTransformMakeRotation(hoursAngle);</div><div class="line">self.minuteHand.transform = CGAffineTransformMakeRotation(minsAngle);</div><div class="line">self.secondHand.transform = CGAffineTransformMakeRotation(secsAngle);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/3.7.jpeg" alt=""></p>
+<h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>和视图一样，图层在图层树当中也是相对于父图层按层级关系放置，一个图层的position依赖于它父图层的bounds，如果父图层发生了移动，它的所有子图层也会跟着移动。</p>
+<p>这样对于放置图层会更加方便，因为你可以通过移动根图层来将它的子图层作为一个整体来移动，但是有时候你需要知道一个图层的绝对位置，或者是相对于另一个图层的位置，而不是它当前父图层的位置。</p>
+<p>CALayer给不同坐标系之间的图层转换提供了一些工具类方法：</p>
+<ul>
+<li>(CGPoint)convertPoint:(CGPoint)point fromLayer:(CALayer *)layer; </li>
+<li>(CGPoint)convertPoint:(CGPoint)point toLayer:(CALayer *)layer; </li>
+<li>(CGRect)convertRect:(CGRect)rect fromLayer:(CALayer *)layer;</li>
+<li>(CGRect)convertRect:(CGRect)rect toLayer:(CALayer *)layer;</li>
+</ul>
+<h2 id="翻转的几何结构"><a href="#翻转的几何结构" class="headerlink" title="翻转的几何结构"></a>翻转的几何结构</h2><p>常规说来，在iOS上，一个图层的<code>position</code>位于父图层的左上角，但是在Mac OS上，通常是位于左下角。Core Animation可以通过<code>geometryFlipped</code>属性来适配这两种情况，它决定了一个图层的坐标是否相对于父图层垂直翻转，是一个BOOL类型。在iOS上通过设置它为YES意味着它的子图层将会被垂直翻转，也就是将会沿着底部排版而不是通常的顶部（它的所有子图层也同理，除非把它们的<code>geometryFlipped</code>属性也设为YES）。</p>
+<h2 id="Z坐标轴"><a href="#Z坐标轴" class="headerlink" title="Z坐标轴"></a>Z坐标轴</h2><p>自动布局</p>
+<p>你可能用过UIViewAutoresizingMask类型的一些常量，应用于当父视图改变尺寸的时候，相应UIView的frame也跟着更新的场景（通常用于横竖屏切换）。</p>
+<p>在iOS6中，苹果介绍了自动排版机制，它和自动调整不同，并且更加复杂。</p>
+<p>在Mac OS平台，CALayer有一个叫做layoutManager的属性可以通过CALayoutManager协议和CAConstraintLayoutManager类来实现自动排版的机制。但由于某些原因，这在iOS上并不适用。</p>
+<p>当使用视图的时候，可以充分利用UIView类接口暴露出来的UIViewAutoresizingMask和NSLayoutConstraintAPI，但如果想随意控制CALayer的布局，就需要手工操作。最简单的方法就是使用CALayerDelegate如下函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)layoutSublayersOfLayer:(CALayer *)layer;</div></pre></td></tr></table></figure>
+<p>当图层的bounds发生改变，或者图层的-setNeedsLayout方法被调用的时候，这个函数将会被执行。这使得你可以手动地重新摆放或者重新调整子图层的大小，但是不能像UIView的autoresizingMask和constraints属性做到自适应屏幕旋转。</p>
+<p>这也是为什么最好使用视图而不是单独的图层来构建应用程序的另一个重要原因之一。</p>
+<p>总结</p>
+<p>本章涉及了CALayer的集合结构，包括它的frame，position和bounds，介绍了三维空间内图层的概念，以及如何在独立的图层内响应事件，最后简单说明了在iOS平台，Core Animation对自动调整和自动布局支持的缺乏。</p>
+<p>在第四章“视觉效果”当中，我们接着介绍一些图层外表的特性。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://ChinaAndy.com/2017/07/06/寄宿图/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -693,7 +837,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
