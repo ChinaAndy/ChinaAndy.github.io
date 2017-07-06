@@ -93,12 +93,23 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="安丹阳">
-<meta property="og:url" content="http://ChinaAndy.com/index.html">
+<meta name="description" content="专用图层CAShapeLayerCAShapeLayer是一个通过矢量图形而不是bitmap来绘制的图层子类。你指定诸如颜色和线宽等属性，用CGPath来定义想要绘制的图形，最后CAShapeLayer就自动渲染出来了。当然，你也可以用Core Graphics直接向原始的CALyer的内容中绘制一个路径，相比直下，使用CAShapeLayer有以下一些优点：  渲染快速。CAShapeLayer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="专用图层">
+<meta property="og:url" content="http://ChinaAndy.com/2017/07/06/专用图层/index.html">
 <meta property="og:site_name" content="安丹阳">
+<meta property="og:description" content="专用图层CAShapeLayerCAShapeLayer是一个通过矢量图形而不是bitmap来绘制的图层子类。你指定诸如颜色和线宽等属性，用CGPath来定义想要绘制的图形，最后CAShapeLayer就自动渲染出来了。当然，你也可以用Core Graphics直接向原始的CALyer的内容中绘制一个路径，相比直下，使用CAShapeLayer有以下一些优点：  渲染快速。CAShapeLayer">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/ios-core-animation/images/6.1.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/ios-core-animation/images/6.2.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/ios-core-animation/images/6.3.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/ios-core-animation/images/6.8.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/ios-core-animation/images/6.10.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/ios-core-animation/images/6.14.png">
+<meta property="og:updated_time" content="2017-07-06T08:02:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安丹阳">
+<meta name="twitter:title" content="专用图层">
+<meta name="twitter:description" content="专用图层CAShapeLayerCAShapeLayer是一个通过矢量图形而不是bitmap来绘制的图层子类。你指定诸如颜色和线宽等属性，用CGPath来定义想要绘制的图形，最后CAShapeLayer就自动渲染出来了。当然，你也可以用Core Graphics直接向原始的CALyer的内容中绘制一个路径，相比直下，使用CAShapeLayer有以下一些优点：  渲染快速。CAShapeLayer">
+<meta name="twitter:image" content="http://wiki.jikexueyuan.com/project/ios-core-animation/images/6.1.png">
 
 
 
@@ -126,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://ChinaAndy.com/"/>
+  <link rel="canonical" href="http://ChinaAndy.com/2017/07/06/专用图层/"/>
 
 
 
 
 
-  <title>安丹阳</title>
+  <title>专用图层 | 安丹阳</title>
   
 
 
@@ -157,9 +168,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,9 +251,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -270,9 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/06/专用图层/" itemprop="url">专用图层</a></h1>
+          <h1 class="post-title" itemprop="name headline">专用图层</h1>
         
 
         <div class="post-meta">
@@ -319,9 +326,7 @@
       
 
       
-        
-          
-            <h1 id="专用图层"><a href="#专用图层" class="headerlink" title="专用图层"></a>专用图层</h1><h2 id="CAShapeLayer"><a href="#CAShapeLayer" class="headerlink" title="CAShapeLayer"></a>CAShapeLayer</h2><p><code>CAShapeLayer</code>是一个通过矢量图形而不是bitmap来绘制的图层子类。你指定诸如颜色和线宽等属性，用CGPath来定义想要绘制的图形，最后<code>CAShapeLayer</code>就自动渲染出来了。当然，你也可以用Core Graphics直接向原始的<code>CALyer</code>的内容中绘制一个路径，相比直下，使用<code>CAShapeLayer</code>有以下一些优点：</p>
+        <h1 id="专用图层"><a href="#专用图层" class="headerlink" title="专用图层"></a>专用图层</h1><h2 id="CAShapeLayer"><a href="#CAShapeLayer" class="headerlink" title="CAShapeLayer"></a>CAShapeLayer</h2><p><code>CAShapeLayer</code>是一个通过矢量图形而不是bitmap来绘制的图层子类。你指定诸如颜色和线宽等属性，用CGPath来定义想要绘制的图形，最后<code>CAShapeLayer</code>就自动渲染出来了。当然，你也可以用Core Graphics直接向原始的<code>CALyer</code>的内容中绘制一个路径，相比直下，使用<code>CAShapeLayer</code>有以下一些优点：</p>
 <ul>
 <li>渲染快速。<code>CAShapeLayer</code>使用了硬件加速，绘制同一图形会比用Core Graphics快很多。</li>
 <li>高效使用内存。一个<code>CAShapeLayer</code>不需要像普通CALayer一样创建一个寄宿图形，所以无论有多大，都不会占用太多的内存。</li>
@@ -444,20 +449,27 @@
 <p>尽管不需要GLKit也可以做到这一切，但是GLKit囊括了很多额外的工作，比如设置顶点和片段着色器，这些都以类C语言叫做GLSL自包含在程序中，同时在运行时载入到图形硬件中。编写GLSL代码和设置EAGLayer没有什么关系，所以我们将用GLKBaseEffect类将着色逻辑抽象出来。其他的事情，我们还是会有以往的方式。</p>
 <p>在开始之前，你需要将GLKit和OpenGLES框架加入到你的项目中，然后就可以实现清单6.14中的代码，里面是设置一个GAEAGLLayer的最少工作，它使用了OpenGL ES 2.0 的绘图上下文，并渲染了一个有色三角（见图6.15）.</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -465,569 +477,38 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ChinaAndy.com/2017/07/06/图层几何学/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安丹阳">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/06/图层几何学/" itemprop="url">图层几何学</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-06T16:00:29+08:00">
-                2017-07-06
-              </time>
+              <a href="/2017/07/06/图层几何学/" rel="next" title="图层几何学">
+                <i class="fa fa-chevron-left"></i> 图层几何学
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="图层几何学"><a href="#图层几何学" class="headerlink" title="图层几何学"></a>图层几何学</h1><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>之前提到过，视图的<code>center</code>属性和图层的<code>position</code>属性都指定了<code>anchorPoint</code>相对于父图层的位置。图层的<code>anchorPoint</code>通过<code>position</code>来控制它的<code>frame</code>的位置，你可以认为<code>anchorPoint</code>是用来移动图层的把柄。</p>
-<p>默认来说，<code>anchorPoint</code>位于图层的中点，所以图层的将会以这个点为中心放置。<code>anchorPoint</code>属性并没有被UIView接口暴露出来，这也是视图的<code>position</code>属性被叫做“center”的原因。但是图层的<code>anchorPoint</code>可以被移动，比如你可以把它置于图层frame的左上角，于是图层的内容将会向右下角的position方向移动（图3.3），而不是居中了。</p>
-<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/3.3.jpeg" alt="image"></p>
-<p>和第二章提到的<code>contentsRect</code>和<code>contentsCenter</code>属性类似，<code>anchorPoint</code>用单位坐标来描述，也就是图层的相对坐标，图层左上角是{0, 0}，右下角是{1, 1}，因此默认坐标是{0.5, 0.5}。<code>anchorPoint</code>可以通过指定x和y值小于0或者大于1，使它放置在图层范围之外。</p>
-<p>注意在图3.3中，当改变了<code>anchorPoint</code>，<code>position</code>属性保持固定的值并没有发生改变，但是<code>frame</code>却移动了。</p>
-<p>那在什么场合需要改变<code>anchorPoint</code>呢？既然我们可以随意改变图层位置，那改变<code>anchorPoint</code>不会造成困惑么？为了举例说明，我们来举一个实用的例子，创建一个模拟闹钟的项目。</p>
-<p>钟面和钟表由四张图片组成（图3.4），为了简单说明，我们还是用传统的方式来装载和加载图片，使用四个UIImageView实例（当然你也可以用正常的视图，设置他们图层的contents图片）。</p>
-<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/3.4.jpeg" alt="clock"></p>
-<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/3.6.jpeg" alt="image"></p>
-<p>清单3.1 Clock</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">@interface ViewController ()</div><div class="line"></div><div class="line">@property (nonatomic, weak) IBOutlet UIImageView *hourHand;</div><div class="line">@property (nonatomic, weak) IBOutlet UIImageView *minuteHand;</div><div class="line">@property (nonatomic, weak) IBOutlet UIImageView *secondHand;</div><div class="line">@property (nonatomic, weak) NSTimer *timer;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation ViewController</div><div class="line"></div><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">[super viewDidLoad];</div><div class="line"></div><div class="line">// adjust anchor points</div><div class="line"></div><div class="line">self.secondHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f); </div><div class="line">self.minuteHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f); </div><div class="line">self.hourHand.layer.anchorPoint = CGPointMake(0.5f, 0.9f);</div><div class="line"></div><div class="line">//start timer</div><div class="line">self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];</div><div class="line">￼</div><div class="line">//set initial hand positions</div><div class="line">[self tick];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)tick</div><div class="line">&#123;</div><div class="line">//convert time to hours, minutes and seconds</div><div class="line">NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];</div><div class="line">NSUInteger units = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;</div><div class="line">NSDateComponents *components = [calendar components:units fromDate:[NSDate date]];</div><div class="line">CGFloat hoursAngle = (components.hour / 12.0) * M_PI * 2.0;</div><div class="line">//calculate hour hand angle //calculate minute hand angle</div><div class="line">CGFloat minsAngle = (components.minute / 60.0) * M_PI * 2.0;</div><div class="line">//calculate second hand angle</div><div class="line">CGFloat secsAngle = (components.second / 60.0) * M_PI * 2.0;</div><div class="line">//rotate hands</div><div class="line">self.hourHand.transform = CGAffineTransformMakeRotation(hoursAngle);</div><div class="line">self.minuteHand.transform = CGAffineTransformMakeRotation(minsAngle);</div><div class="line">self.secondHand.transform = CGAffineTransformMakeRotation(secsAngle);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
-<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/3.7.jpeg" alt=""></p>
-<h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>和视图一样，图层在图层树当中也是相对于父图层按层级关系放置，一个图层的position依赖于它父图层的bounds，如果父图层发生了移动，它的所有子图层也会跟着移动。</p>
-<p>这样对于放置图层会更加方便，因为你可以通过移动根图层来将它的子图层作为一个整体来移动，但是有时候你需要知道一个图层的绝对位置，或者是相对于另一个图层的位置，而不是它当前父图层的位置。</p>
-<p>CALayer给不同坐标系之间的图层转换提供了一些工具类方法：</p>
-<ul>
-<li>(CGPoint)convertPoint:(CGPoint)point fromLayer:(CALayer *)layer; </li>
-<li>(CGPoint)convertPoint:(CGPoint)point toLayer:(CALayer *)layer; </li>
-<li>(CGRect)convertRect:(CGRect)rect fromLayer:(CALayer *)layer;</li>
-<li>(CGRect)convertRect:(CGRect)rect toLayer:(CALayer *)layer;</li>
-</ul>
-<h2 id="翻转的几何结构"><a href="#翻转的几何结构" class="headerlink" title="翻转的几何结构"></a>翻转的几何结构</h2><p>常规说来，在iOS上，一个图层的<code>position</code>位于父图层的左上角，但是在Mac OS上，通常是位于左下角。Core Animation可以通过<code>geometryFlipped</code>属性来适配这两种情况，它决定了一个图层的坐标是否相对于父图层垂直翻转，是一个BOOL类型。在iOS上通过设置它为YES意味着它的子图层将会被垂直翻转，也就是将会沿着底部排版而不是通常的顶部（它的所有子图层也同理，除非把它们的<code>geometryFlipped</code>属性也设为YES）。</p>
-<h2 id="Z坐标轴"><a href="#Z坐标轴" class="headerlink" title="Z坐标轴"></a>Z坐标轴</h2><p>自动布局</p>
-<p>你可能用过UIViewAutoresizingMask类型的一些常量，应用于当父视图改变尺寸的时候，相应UIView的frame也跟着更新的场景（通常用于横竖屏切换）。</p>
-<p>在iOS6中，苹果介绍了自动排版机制，它和自动调整不同，并且更加复杂。</p>
-<p>在Mac OS平台，CALayer有一个叫做layoutManager的属性可以通过CALayoutManager协议和CAConstraintLayoutManager类来实现自动排版的机制。但由于某些原因，这在iOS上并不适用。</p>
-<p>当使用视图的时候，可以充分利用UIView类接口暴露出来的UIViewAutoresizingMask和NSLayoutConstraintAPI，但如果想随意控制CALayer的布局，就需要手工操作。最简单的方法就是使用CALayerDelegate如下函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)layoutSublayersOfLayer:(CALayer *)layer;</div></pre></td></tr></table></figure>
-<p>当图层的bounds发生改变，或者图层的-setNeedsLayout方法被调用的时候，这个函数将会被执行。这使得你可以手动地重新摆放或者重新调整子图层的大小，但是不能像UIView的autoresizingMask和constraints属性做到自适应屏幕旋转。</p>
-<p>这也是为什么最好使用视图而不是单独的图层来构建应用程序的另一个重要原因之一。</p>
-<p>总结</p>
-<p>本章涉及了CALayer的集合结构，包括它的frame，position和bounds，介绍了三维空间内图层的概念，以及如何在独立的图层内响应事件，最后简单说明了在iOS平台，Core Animation对自动调整和自动布局支持的缺乏。</p>
-<p>在第四章“视觉效果”当中，我们接着介绍一些图层外表的特性。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ChinaAndy.com/2017/07/06/寄宿图/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安丹阳">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/06/寄宿图/" itemprop="url">寄宿图</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-06T15:57:59+08:00">
-                2017-07-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="寄宿图"><a href="#寄宿图" class="headerlink" title="寄宿图"></a>寄宿图</h2><p><code>CALayer</code> 有一个属性叫做<code>contents</code>，这个属性的类型被定义为id，意味着它可以是任何类型的对象。在这种情况下，你可以给<code>contents</code>属性赋任何值，你的app仍然能够编译通过。但是，在实践中，如果你给<code>contents</code>赋的不是CGImage，那么你得到的图层将是空白的。</p>
-<h3 id="contents属性"><a href="#contents属性" class="headerlink" title="contents属性"></a>contents属性</h3><p><code>contents</code>这个奇怪的表现是由<code>Mac OS</code>的历史原因造成的。它之所以被定义为id类型，是因为在Mac OS系统上，这个属性对CGImage和NSImage类型的值都起作用。如果你试图在iOS平台上将UIImage的值赋给它，只能得到一个空白的图层。一些初识Core Animation的iOS开发者可能会对这个感到困惑。</p>
-<p><code>layer.contents = (__bridge id)image.CGImage;</code><br><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/2.1.png" alt="Alt text"></p>
-<h3 id="contentGravity"><a href="#contentGravity" class="headerlink" title="contentGravity"></a>contentGravity</h3><p><code>CALayer</code>与<code>contentMode</code>对应的属性叫做<code>contentsGravity</code>，但是它是一个<code>NSString</code>类型，而不是像对应的<code>UIKit</code>部分，那里面的值是枚举。<code>contentsGravity</code>可选的常量值有以下一些：</p>
-<ul>
-<li>kCAGravityCenter</li>
-<li>kCAGravityTop</li>
-<li>kCAGravityBottom</li>
-<li>kCAGravityLeft</li>
-<li>kCAGravityRight</li>
-<li>kCAGravityTopLeft</li>
-<li>kCAGravityTopRight</li>
-<li>kCAGravityBottomLeft</li>
-<li>kCAGravityBottomRight</li>
-<li>kCAGravityResize</li>
-<li>kCAGravityResizeAspect</li>
-<li>kCAGravityResizeAspectFill<br>和cotentMode一样，contentsGravity的目的是为了决定内容在图层的边界中怎么对齐，我们将使用kCAGravityResizeAspect，它的效果等同于UIViewContentModeScaleAspectFit， 同时它还能在图层中等比例拉伸以适应图层的边界。</li>
-</ul>
-<p><code>self.layerView.layer.contentsGravity = kCAGravityResizeAspect;</code></p>
-<h3 id="contentsScale"><a href="#contentsScale" class="headerlink" title="contentsScale"></a>contentsScale</h3><p><code>contentsScale</code>属性定义了寄宿图的像素尺寸和视图大小的比例，默认情况下它是一个值为1.0的浮点数。</p>
-<p><code>contentsScale</code>的目的并不是那么明显。它并不是总会对屏幕上的寄宿图有影响。如果你尝试对我们的例子设置不同的值，你就会发现根本没任何影响。因为<code>contents</code>由于设置了<code>contentsGravity</code>属性，所以它已经被拉伸以适应图层的边界。</p>
-<p>如果你只是单纯地想放大图层的<code>contents</code>图片，你可以通过使用图层的<code>transform</code>和<code>affineTransform</code>属性来达到这个目的（见第五章『Transforms』，里面对此有解释），这(指放大)也不是<code>contentsScale</code>的目的所在.</p>
-<p><code>contentsScale</code>属性其实属于支持高分辨率（又称Hi-DPI或Retina）屏幕机制的一部分。它用来判断在绘制图层的时候应该为寄宿图创建的空间大小，和需要显示的图片的拉伸度（假设并没有设置contentsGravity属性）。UIView有一个类似功能但是非常少用到的<code>contentScaleFactor</code>属性。</p>
-<p>如果<code>contentsScale</code>设置为1.0，将会以每个点1个像素绘制图片，如果设置为2.0，则会以每个点2个像素绘制图片，这就是我们熟知的Retina屏幕。（如果你对像素和点的概念不是很清楚的话，这个章节的后面部分将会对此做出解释）。</p>
-<p>这并不会对我们在使用<code>kCAGravityResizeAspect</code>时产生任何影响，因为它就是拉伸图片以适应图层而已，根本不会考虑到分辨率问题。但是如果我们把<code>contentsGravity</code>设置为<code>kCAGravityCenter</code>（这个值并不会拉伸图片），那将会有很明显的变化.</p>
-<h3 id="maskToBounds"><a href="#maskToBounds" class="headerlink" title="maskToBounds"></a>maskToBounds</h3><p>现在我们的雪人总算是显示了正确的大小，不过你也许已经发现了另外一些事情：他超出了视图的边界。默认情况下，<code>UIView</code>仍然会绘制超过边界的内容或是子视图，在CALayer下也是这样的。</p>
-<p><code>UIView</code>有一个叫做<code>clipsToBounds</code>的属性可以用来决定是否显示超出边界的内容，<code>CALayer</code>对应的属性叫做<code>masksToBounds</code>，把它设置为YES，雪人就在边界里啦～</p>
-<h3 id="contentsRect"><a href="#contentsRect" class="headerlink" title="contentsRect"></a>contentsRect</h3><p>CALayer的<code>contentsRect</code>属性允许我们在图层边框里显示寄宿图的一个子域。这涉及到图片是如何显示和拉伸的，所以要比<code>contentsGravity</code>灵活多了</p>
-<p>和<font color="#0099ff" size="5" face="黑体"><code>bounds</code>，<code>frame</code></font>不同，<code>contentsRect</code>不是按点来计算的，它使用了单位坐标，单位坐标指定在0到1之间，是一个相对值（像素和点就是绝对值）。所以他们是相对与寄宿图的尺寸的。iOS使用了以下的坐标系统：</p>
-<ul>
-<li>点 —— 在iOS和Mac OS中最常见的坐标体系。点就像是虚拟的像素，也被称作逻辑像素。在标准设备上，一个点就是一个像素，但是在Retina设备上，一个点等于2*2个像素。iOS用点作为屏幕的坐标测算体系就是为了在Retina设备和普通设备上能有一致的视觉效果。</li>
-<li>像素 —— 物理像素坐标并不会用来屏幕布局，但是仍然与图片有相对关系。UIImage是一个屏幕分辨率解决方案，所以指定点来度量大小。但是一些底层的图片表示如CGImage就会使用像素，所以你要清楚在Retina设备和普通设备上，他们表现出来了不同的大小。</li>
-<li>单位 —— 对于与图片大小或是图层边界相关的显示，单位坐标是一个方便的度量方式， 当大小改变的时候，也不需要再次调整。单位坐标在OpenGL这种纹理坐标系统中用得很多，Core Animation中也用到了单位坐标。<br>默认的contentsRect是{0, 0, 1, 1}，这意味着整个寄宿图默认都是可见的，如果我们指定一个小一点的矩形，图片就会被裁剪（如图2.6）<br><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/2.6.png" alt="image"></li>
-</ul>
-<p>事实上给<code>contentsRect</code>设置一个负数的原点或是大于{1, 1}的尺寸也是可以的。这种情况下，最外面的像素会被拉伸以填充剩下的区域。</p>
-<p><code>contentsRect</code>在app中最有趣的地方在于一个叫做<code>image sprites</code>（图片拼合）的用法。如果你有游戏编程的经验，那么你一定对图片拼合的概念很熟悉，图片能够在屏幕上独立地变更位置。抛开游戏编程不谈，这个技术常用来指代载入拼合的图片，跟移动图片一点关系也没有。</p>
-<p>典型地，图片拼合后可以打包整合到一张大图上一次性载入。相比多次载入不同的图片，这样做能够带来很多方面的好处：内存使用，载入时间，渲染性能等等.</p>
-<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/2.7.png" alt="contentsRect"></p>
-<p>我们的工程中需要一些额外的视图。（为了避免太多代码。我们将使用Interface Builder来拜访他们的位置，如果你愿意还是可以用代码的方式来实现的）。清单2.3有需要的代码，图2.8展示了结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">@interface ViewController ()</div><div class="line">@property (nonatomic, weak) IBOutlet UIView *coneView;</div><div class="line">@property (nonatomic, weak) IBOutlet UIView *shipView;</div><div class="line">@property (nonatomic, weak) IBOutlet UIView *iglooView;</div><div class="line">@property (nonatomic, weak) IBOutlet UIView *anchorView;</div><div class="line">@end</div><div class="line"></div><div class="line">@implementation ViewController</div><div class="line"></div><div class="line">- (void)addSpriteImage:(UIImage *)image withContentRect:(CGRect)rect ￼toLayer:(CALayer *)layer //set image</div><div class="line">&#123;</div><div class="line">layer.contents = (__bridge id)image.CGImage;</div><div class="line"></div><div class="line">//scale contents to fit</div><div class="line">layer.contentsGravity = kCAGravityResizeAspect;</div><div class="line"></div><div class="line">//set contentsRect</div><div class="line">layer.contentsRect = rect;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)viewDidLoad </div><div class="line">&#123;</div><div class="line">[super viewDidLoad]; //load sprite sheet</div><div class="line">UIImage *image = [UIImage imageNamed:@&quot;Sprites.png&quot;];</div><div class="line">//set igloo sprite</div><div class="line">[self addSpriteImage:image withContentRect:CGRectMake(0, 0, 0.5, 0.5) toLayer:self.iglooView.layer];</div><div class="line">//set cone sprite</div><div class="line">[self addSpriteImage:image withContentRect:CGRectMake(0.5, 0, 0.5, 0.5) toLayer:self.coneView.layer];</div><div class="line">//set anchor sprite</div><div class="line">[self addSpriteImage:image withContentRect:CGRectMake(0, 0.5, 0.5, 0.5) toLayer:self.anchorView.layer];</div><div class="line">//set spaceship sprite</div><div class="line">[self addSpriteImage:image withContentRect:CGRectMake(0.5, 0.5, 0.5, 0.5) toLayer:self.shipView.layer];</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
-<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/2.8.png" alt="contentsRect"></p>
-<h3 id="contentsCenter-九宫格"><a href="#contentsCenter-九宫格" class="headerlink" title="contentsCenter(九宫格)"></a>contentsCenter(九宫格)</h3><p><code>contentsCenter</code>其实是一个CGRect，它定义了一个固定的边框和一个在图层上可拉伸的区域。 改变<code>contentsCenter</code>的值并不会影响到寄宿图的显示，除非这个图层的大小改变了，你才看得到效果。</p>
-<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/2.10.png" alt="contentsCenter"></p>
-<h3 id="Custome-Drawing"><a href="#Custome-Drawing" class="headerlink" title="Custome Drawing"></a>Custome Drawing</h3><p>给<code>contents</code>赋CGImage的值不是唯一的设置寄宿图的方法。我们也可以直接用Core Graphics直接绘制寄宿图。能够通过继承UIView并实现<code>-drawRect:</code>方法来自定义绘制。</p>
-<p><code>-drawRect:</code> 方法没有默认的实现，因为对UIView来说，寄宿图并不是必须的，它不在意那到底是单调的颜色还是有一个图片的实例。如果UIView检测到<code>-drawRect:</code> 方法被调用了，它就会为视图分配一个寄宿图，这个寄宿图的像素尺寸等于视图大小乘以 <code>contentsScale</code>的值。</p>
-<p>如果你不需要寄宿图，那就不要创建这个方法了，这会造成CPU资源和内存的浪费，这也是为什么苹果建议：如果没有自定义绘制的任务就不要在子类中写一个空的<code>-drawRect:</code>方法。</p>
-<p>当视图在屏幕上出现的时候 <code>-drawRect:</code>方法就会被自动调用。<code>-drawRect:</code>方法里面的代码利用Core Graphics去绘制一个寄宿图，然后内容就会被缓存起来直到它需要被更新（通常是因为开发者调用了<code>-setNeedsDisplay</code>方法，尽管影响到表现效果的属性值被更改时，一些视图类型会被自动重绘，如bounds属性）。虽然<code>-drawRect:</code>方法是一个UIView方法，事实上都是底层的CALayer安排了重绘工作和保存了因此产生的<code>图片</code>。</p>
-<p>CALayer有一个可选的<code>delegate</code>属性，实现了CALayerDelegate协议，当CALayer需要一个内容特定的信息时，就会从协议中请求。CALayerDelegate是一个非正式协议，其实就是说没有CALayerDelegate <code>@protocol</code>可以让你在类里面引用啦。你只需要调用你想调用的方法，CALayer会帮你做剩下的。（<code>delegate</code>属性被声明为id类型，所有的代理方法都是可选的）。</p>
-<p>当需要被重绘时，CALayer会请求它的代理给他一个寄宿图来显示。它通过调用下面这个方法做到的:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(void)displayLayer:(CALayerCALayer *)layer;</div></pre></td></tr></table></figure>
-<p>趁着这个机会，如果代理想直接设置<code>contents</code>属性的话，它就可以这么做，不然没有别的方法可以调用了。如果代理不实现<code>-displayLayer:</code>方法，CALayer就会转而尝试调用下面这个方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx;</div></pre></td></tr></table></figure>
-<p>在调用这个方法之前，CALayer创建了一个合适尺寸的空寄宿图（尺寸由<code>bounds</code>和<code>contentsScale</code>决定）和一个Core Graphics的绘制上下文环境，为绘制寄宿图做准备，他作为ctx参数传入。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">@implementation ViewController</div><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">[super viewDidLoad];</div><div class="line">￼</div><div class="line">//create sublayer</div><div class="line">CALayer *blueLayer = [CALayer layer];</div><div class="line">blueLayer.frame = CGRectMake(50.0f, 50.0f, 100.0f, 100.0f);</div><div class="line">blueLayer.backgroundColor = [UIColor blueColor].CGColor;</div><div class="line"></div><div class="line">//set controller as layer delegate</div><div class="line">blueLayer.delegate = self;</div><div class="line"></div><div class="line">//ensure that layer backing image uses correct scale</div><div class="line">blueLayer.contentsScale = [UIScreen mainScreen].scale; //add layer to our view</div><div class="line">[self.layerView.layer addSublayer:blueLayer];</div><div class="line"></div><div class="line">//force layer to redraw</div><div class="line">[blueLayer display];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx</div><div class="line">&#123;</div><div class="line">//draw a thick red circle</div><div class="line">CGContextSetLineWidth(ctx, 10.0f); </div><div class="line">CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);</div><div class="line">CGContextStrokeEllipseInRect(ctx, layer.bounds);</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
-<p><img src="http://wiki.jikexueyuan.com/project/ios-core-animation/images/2.12.png" alt="image"></p>
-<p>注意一下一些有趣的事情：</p>
-<ul>
-<li>我们在blueLayer上显式地调用了<code>-display</code>。不同于UIView，当图层显示在屏幕上时，CALayer不会自动重绘它的内容。它把重绘的决定权交给了开发者。</li>
-<li>尽管我们没有用masksToBounds属性，绘制的那个圆仍然沿边界被裁剪了。这是因为当你使用CALayerDelegate绘制寄宿图的时候，并没有对超出边界外的内容提供绘制支持。</li>
-</ul>
-<p>当使用寄宿了视图的图层的时候，你也不必实现<code>-displayLayer:</code>和<code>-drawLayer:inContext:</code>方法来绘制你的寄宿图。通常做法是实现UIView的<code>-drawRect:</code>方法，UIView就会帮你做完剩下的工作，包括在需要重绘的时候调用<code>-display</code>方法。</p>
-<p>#总结<br>本章介绍了寄宿图和一些相关的属性。你学到了如何显示和放置图片， 使用拼合技术来显示， 以及用CALayerDelegate和Core Graphics来绘制图层内容。</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ChinaAndy.com/2017/07/06/FirstArticle/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安丹阳">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/06/FirstArticle/" itemprop="url">FirstArticle</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-06T15:39:45+08:00">
-                2017-07-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://ChinaAndy.com/2017/07/06/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安丹阳">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/06/hello-world/" itemprop="url">FirstArticle an ananaana</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-06T14:52:30+08:00">
-                2017-07-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -1035,6 +516,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1054,8 +539,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -1099,6 +593,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#专用图层"><span class="nav-number">1.</span> <span class="nav-text">专用图层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAShapeLayer"><span class="nav-number">1.1.</span> <span class="nav-text">CAShapeLayer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个CGPath"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建一个CGPath</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆角"><span class="nav-number">1.2.</span> <span class="nav-text">圆角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CATextLayer"><span class="nav-number">1.3.</span> <span class="nav-text">CATextLayer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#富文本"><span class="nav-number">1.4.</span> <span class="nav-text">富文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行距和字距"><span class="nav-number">1.4.1.</span> <span class="nav-text">行距和字距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UILabel的替代品"><span class="nav-number">1.4.2.</span> <span class="nav-text">UILabel的替代品</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CATransformLayer"><span class="nav-number">1.5.</span> <span class="nav-text">CATransformLayer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAGradientLayer"><span class="nav-number">1.6.</span> <span class="nav-text">CAGradientLayer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础渐变"><span class="nav-number">1.6.1.</span> <span class="nav-text">基础渐变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重渐变"><span class="nav-number">1.6.2.</span> <span class="nav-text">多重渐变</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAReplicatorLayer"><span class="nav-number">1.7.</span> <span class="nav-text">CAReplicatorLayer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反射"><span class="nav-number">1.7.1.</span> <span class="nav-text">反射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAScrollLayer"><span class="nav-number">1.8.</span> <span class="nav-text">CAScrollLayer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CATiledLayer"><span class="nav-number">1.9.</span> <span class="nav-text">CATiledLayer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小片裁剪"><span class="nav-number">1.9.1.</span> <span class="nav-text">小片裁剪</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAEmitterLayer"><span class="nav-number">1.10.</span> <span class="nav-text">CAEmitterLayer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAEAGLLayer"><span class="nav-number">1.11.</span> <span class="nav-text">CAEAGLLayer</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1212,10 +722,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
